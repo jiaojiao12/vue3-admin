@@ -1,6 +1,11 @@
 <template>
   <div class="login_container">
-    登录页
+    <div class="login_wrap">
+      <ul class="menu_tab">
+        <li class="current">登录</li>
+        <li>注册</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -10,9 +15,29 @@ export default {
 };
 </script>
 
-<style lang="scss" scop>
+<style lang="scss" scope>
 .login_container {
   height: 100vh;
   background-color: $loginBg;
+}
+.login_wrap {
+  height: 330px;
+  margin: auto;
+}
+.menu_tab {
+  text-align: center;
+  li {
+    display: inline-block;
+    font-size: 14px;
+    width: 88px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .current {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 </style>
