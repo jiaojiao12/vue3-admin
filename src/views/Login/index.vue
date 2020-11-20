@@ -2,8 +2,14 @@
   <div class="login_container">
     <div class="login_wrap">
       <ul class="menu_tab">
-        <li class="current">登录</li>
-        <li>注册</li>
+        <li
+          :class="{ current: currentIndex === index }"
+          v-for="(item, index) in menuTab"
+          :key="index"
+          @click="onClick(index)"
+        >
+          {{ item.txt }}
+        </li>
       </ul>
     </div>
   </div>
@@ -11,7 +17,18 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  data() {
+    return {
+      menuTab: [{ txt: "登录" }, { txt: "注册" }],
+      currentIndex: 0
+    };
+  },
+  methods: {
+    onClick(index) {
+      this.currentIndex = index;
+    }
+  }
 };
 </script>
 
